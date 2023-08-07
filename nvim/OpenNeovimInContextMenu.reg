@@ -1,0 +1,19 @@
+Windows Registry Editor Version 5.00
+; Open files
+; Default Neovim Location C:\Program Files\Neovim\bin\nvim-qt.exe
+
+;Right click on file
+[HKEY_CLASSES_ROOT\*\shell\Open Git Bash]
+@="Open with Neovim"
+"Icon"="C:\\Program Files\\Neovim\\bin\\nvim-qt.exe"
+
+[HKEY_CLASSES_ROOT\*\shell\Open Git Bash\command]
+@="\"C:\\Program Files\\Neovim\\bin\\nvim-qt.exe\" \"%1\""
+
+;Right click in folder
+[HKEY_CLASSES_ROOT\Directory\Background\shell\bash]
+@="Open Neovim here"
+"Icon"="C:\\Program Files\\Neovim\\bin\\nvim-qt.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\bash\command]
+@="\"C:\\Program Files\\Neovim\\bin\\nvim-qt.exe\" \"%v.\""
