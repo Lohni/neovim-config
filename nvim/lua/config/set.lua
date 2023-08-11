@@ -16,3 +16,5 @@ vim.opt.backup = false
 vim.opt.undofile = true
 
 vim.opt.scrolloff = 8
+
+vim.opt.guicursor="n-v-c-i:block"
