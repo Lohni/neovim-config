@@ -1,13 +1,13 @@
 function getCSRByCursorPosition()
-    if (vim.api.nvim_win_get_cursor(0)[2] ==0) then return '<Esc>vw<Left>' else return '<Esc><Right>vw<Left>' end
+	if (vim.api.nvim_win_get_cursor(0)[2] == 0) then return '<Esc>vw<Left>' else return '<Esc><Right>vw<Left>' end
 end
 
 function getLineNavigationLeft()
-    if (vim.api.nvim_win_get_cursor(0)[2] == 0) then return '<Esc><Up>$i<Right>' else return '<Left>' end
+	if (vim.api.nvim_win_get_cursor(0)[2] == 0) then return '<Esc><Up>$i<Right>' else return '<Left>' end
 end
 
 function getLineNavigationRight()
-    if ((vim.fn.col('.')) == vim.fn.col('$')) then return "<Esc><Down>_i" else return "<Right>" end
+	if ((vim.fn.col('.')) == vim.fn.col('$')) then return "<Esc><Down>_i" else return "<Right>" end
 end
 
 vim.g.mapleader = " "
@@ -16,7 +16,7 @@ vim.keymap.set("i", "<S-Up>", "<Esc>v<Up>")
 vim.keymap.set("i", "<S-Down>", "<Esc>v<Down>")
 vim.keymap.set("i", "<C-S-Left>", "<Esc>vb")
 vim.keymap.set("v", "<C-S-Left>", "b")
-vim.keymap.set("i", "<C-S-Right>", 'v:lua.getCSRByCursorPosition()', {expr = true})
+vim.keymap.set("i", "<C-S-Right>", 'v:lua.getCSRByCursorPosition()', { expr = true })
 vim.keymap.set("v", "<C-S-Right>", "w")
 vim.keymap.set("v", "<C-x>", "d<Esc>i")
 vim.keymap.set("v", "<C-c>", "y<Esc>i")
@@ -41,6 +41,7 @@ vim.keymap.set("n", "<A-Right>", "<C-i>")
 vim.keymap.set("i", "\"", "\"\"<Left>")
 vim.keymap.set("i", "[", "[]<Left>")
 vim.keymap.set("i", "{", "{}<Left>")
-vim.keymap.set("i", "<Left>", 'v:lua.getLineNavigationLeft()', {expr = true})
-vim.keymap.set("i", "<Right>", 'v:lua.getLineNavigationRight()', {expr = true})
+vim.keymap.set("i", "<Left>", 'v:lua.getLineNavigationLeft()', { expr = true })
+vim.keymap.set("i", "<Right>", 'v:lua.getLineNavigationRight()', { expr = true })
 
+vim.keymap.set("n", '<S-U-F>', 'v:vim.lsp.buf.format()',  {expr = true})

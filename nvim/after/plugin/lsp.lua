@@ -23,6 +23,17 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<C-Enter>", function() vim.lsp.buf.code_action() end, {buffer = bufnr, remap = false})
 end)
 
+-- Run omnisharp not in single file mode
+local nvim_lsp = require('lspconfig')
+local pid = vim.fn.getpid()
+local start = os.getenv('MASON') .. "\\packages\\omnisharp\\libexec\\omnisharp.exe"
+lsp.configure('omnisharp', {
+    cmd = {start},
+    root_dir = nvim_lsp.util.root_pattern("*.csproj", "*.sln"),
+    useModernNet = false,
+    sdkPath = ""
+})
+
 lsp.setup()
 
 local cmp = require('cmp')
@@ -39,4 +50,5 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 cmp.setup({
 	mapping = cmp_mappings
 })
+
 
