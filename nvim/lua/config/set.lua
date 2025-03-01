@@ -19,6 +19,6 @@ vim.opt.undofile = true
 vim.opt.scrolloff = 8
 
 vim.opt.guicursor="n-v-c-i:block"
-vim.opt.number = true
-
-
+vim.opt.relativenumber = true
+vim.opt.guifont = {'JetBrains Mono:h11'} -- install variable JetBrains Mono font first
+vim.opt.fileformat = 'unix'

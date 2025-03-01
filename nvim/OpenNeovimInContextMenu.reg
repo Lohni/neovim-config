@@ -8,7 +8,7 @@ Windows Registry Editor Version 5.00
 "Icon"="C:\\Program Files\\Neovim\\bin\\nvim-qt.exe"
 
 [HKEY_CLASSES_ROOT\*\shell\Open Git Bash\command]
-@="\"C:\\Program Files\\Neovim\\bin\\nvim-qt.exe\" \"%1\""
+@="\"C:\\Program Files\\Neovim\\bin\\nvim.exe\" \"%1\""
 
 ;Right click in folder
 [HKEY_CLASSES_ROOT\Directory\Background\shell\bash]
@@ -16,4 +16,4 @@ Windows Registry Editor Version 5.00
 "Icon"="C:\\Program Files\\Neovim\\bin\\nvim-qt.exe"
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\bash\command]
-@="\"C:\\Program Files\\Neovim\\bin\\nvim-qt.exe\" \"%v.\""
+@="\"C:\\Program Files\\Neovim\\bin\\nvim.exe\" \"%v.\""

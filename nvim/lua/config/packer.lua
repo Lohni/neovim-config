@@ -20,11 +20,10 @@ return require('packer').startup(function(use)
 
 	use('nvim-treesitter/nvim-treesitter',
 		{ run = function() pcall(require('nvim-treesitter.install').update { with_sync = true }) end, })
-	use('theprimeagen/harpoon')          -- Quickswitch between chosen files in a session
 	use('mbbill/undotree')               -- History of File-Changes
 	use('nvim-lualine/lualine.nvim')     -- Fancy statusline
 	use('lukas-reineke/indent-blankline.nvim') -- Blankline indentationguides
-
+    
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
@@ -34,6 +33,7 @@ return require('packer').startup(function(use)
 			{ 'williamboman/mason.nvim' }, -- Optional
 			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 			{ 'j-hui/fidget.nvim' },
+			{ 'ziglang/zig.vim' },
 			-- Autocompletion
 			{ 'hrsh7th/nvim-cmp' }, -- Required
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
@@ -41,4 +41,21 @@ return require('packer').startup(function(use)
 			{ 'saadparwaiz1/cmp_luasnip' }
 		}
 	}
+
+    -- Debugging
+    use{
+        'mfussenegger/nvim-dap',
+        config = function () end
+    }
+
+    use {
+        'jay-babu/mason-nvim-dap.nvim',
+        dependencies = {
+            'williamboman/mason.nvim',
+            'mfussenegger/nvim-dap',
+        },
+        opts = { handlers = {}}
+    }
+
+    use('machakann/vim-highlightedyank')
 end)

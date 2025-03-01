@@ -45,3 +45,9 @@ vim.keymap.set("i", "<Left>", 'v:lua.getLineNavigationLeft()', { expr = true })
 vim.keymap.set("i", "<Right>", 'v:lua.getLineNavigationRight()', { expr = true })
 
 vim.keymap.set("n", '<S-U-F>', 'v:vim.lsp.buf.format()',  {expr = true})
+vim.keymap.set("n", '<A-j>', '<Esc>:m +1<CR>')
+vim.keymap.set("n", '<A-k>', '<Esc>:m -2<CR>')
+
+vim.keymap.set("n", '<leader>b', ':DapToggleBreakpoint <CR>')
+vim.keymap.set("n", '<leader>db', ':DapContinue <CR>')
+
